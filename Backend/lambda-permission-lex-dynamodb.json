@@ -1,0 +1,33 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"lex:RecognizeText",
+				"lex:RecognizeUtterance",
+				"lex:StartConversation"
+			],
+			"Resource": [
+				"arn:aws:lex:us-east-1:<AccountID>:bot-alias/<LEX-bot-ID>/<LEX-bot-alias-ID>",
+				"arn:aws:lex:us-east-1:<AccountID>:bot/<LEX-bot-ID>/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:GetItem",
+				"dynamodb:PutItem"
+			],
+			"Resource": "arn:aws:dynamodb:us-east-1:<AccountID>:table/<user-session-table-name>"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:GetItem",
+				"dynamodb:PutItem"
+			],
+			"Resource": "arn:aws:dynamodb:us-east-1:<AccountID>:table/<rate-limit-table-name>"
+		}
+	]
+}
