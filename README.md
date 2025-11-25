@@ -4,9 +4,9 @@
 ### Youtube tutorial:
 ### Live project link: https://d330r4ax04vbs6.cloudfront.net/
 
-Q1 Have you ever built a RAG chatbot?
-Q2 Have you ever built a fully serverless application?
-If your answer for the above two questions is no, then this project is for you. 
+#### Q1 Have you ever built a RAG chatbot?
+#### Q2 Have you ever built a fully serverless application?
+#### If your answer for the above two questions is no, then this project is for you. 
 
 If you are a backend engineer, these questions are important for you because: 💁
 1) ➡️ It has now become an industry standard for organizations to have a chatbot on their website that can answer questions about their policies and services.
