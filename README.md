@@ -1,7 +1,7 @@
 # Serverless-RAG-chatbot
 ## Building a RAG chatbot with a serverless architecture using AWS along with an interactive frontend
 
-### Youtube tutorial:
+### Youtube tutorial: (coming soon)
 ### Live project link: https://d330r4ax04vbs6.cloudfront.net/
 
 #### Q1 Have you ever built a RAG chatbot?
