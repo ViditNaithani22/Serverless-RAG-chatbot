@@ -1,0 +1,9 @@
+{
+  "resource": "/",
+  "path": "/",
+  "httpMethod": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"message\": \"hi\", \"userId\": \"user-123\"}"
+}

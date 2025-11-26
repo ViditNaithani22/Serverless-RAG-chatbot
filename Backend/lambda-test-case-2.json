@@ -1,0 +1,9 @@
+{
+  "resource": "/",
+  "path": "/",
+  "httpMethod": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"message\": \"Who was Gandalf?\", \"userId\": \"user-123\"}"
+}
