@@ -44,6 +44,9 @@ Key Features: <br>
 <br>
 As you can see in the diagram, our architecture is divided into two parts, frontend and backend.<br>
 The front-end is pretty simple. We will store a single html file "chat-bot-ui.html" in an <b>S3</b> bucket without public access.<br> 
+<br>
+<img width="238" height="160" alt="image" src="https://github.com/user-attachments/assets/78e8f460-8446-4932-a276-95ed7b7fa2f7" />
+<br><br>
 Then we will create a <b>Cloud-Front</b> distribution. Mention chat-bot-ui.html as the default root object. Mention the S3 bucket as the OAC, Origin Name, and Origin Domain, this should automatically create a bucket policy for our S3 bucket that grants the cloudfront the access to the bucket.<br><br>
 
 <img width="255" height="116" alt="image" src="https://github.com/user-attachments/assets/04491784-cb0d-45dc-afb6-f5992fc13115" /><br>
@@ -53,6 +56,11 @@ Then we will create a <b>Cloud-Front</b> distribution. Mention chat-bot-ui.html 
 you should be able to see your website on this URL provided by the Cloudfront. Don't forget to put "https://" before it <br>
 <br>
 <img width="155" height="97" alt="image" src="https://github.com/user-attachments/assets/9b6ec222-2df7-427b-876e-54b3b2cf6b3d" /><br>
+<br><br>
+The first step for the backend is to create an <b>S3</b> bucket and upload your PDF files in it. These files contain the data you want your chatbot to learn and become expert in answering any questions from these files. 
+<br><br>
+<img width="247" height="173" alt="image" src="https://github.com/user-attachments/assets/43615ef0-85df-4a79-95ed-f4586528661b" />
+<br><br>
 
 
 
