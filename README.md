@@ -13,7 +13,8 @@ If you are a backend engineer, these questions are important for you because: �
 2) ➡️ Companies expect you to understand serverless architecture, as it makes applications faster, cheaper, and easier to manage — you don’t manage the servers yourself and only pay for what you use.
 
 I created a serverless AI chatbot that answers questions about Lord of the Rings using AWS! 
-Ask it anything about Middle-earth! 🧙‍♂️ But go easy on it as it is trained on just two pdf files, one containing the summary and another containing the characters. 
+Ask it anything about Middle-earth! 🧙‍♂️ <br>
+But go easy on it as it is trained on just two pdf files, one containing the summary and another containing the characters. 
 
 Begin chat with one of these: hi, Hi, hey, Hey, hello, Hello <br> 
 Ask questions like: <br>
@@ -31,14 +32,15 @@ AWS services used:<br>
 🔹 S3 + CloudFront - Global content deliver <br>
 🔹 Amazon Lex - for text conversational interfaces <br>
 
+Key Features: <br> 
+✅ Fully serverless architecture (auto-scales, pay-per-use) <br> 
+✅ Multi-layer security (rate limiting, throttling, input validation) <br>
+
+
 
 ### Let's understand the Architecture:
 <img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
 
-
-Key Features: <br> 
-✅ Fully serverless architecture (auto-scales, pay-per-use) <br> 
-✅ Multi-layer security (rate limiting, throttling, input validation) <br>
 
 
 
