@@ -40,7 +40,7 @@ Key Features: <br>
 
 ### Let's understand the Architecture:
 <img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
-
+<br>
 As you can see in the diagram, our architecture is divided into two parts, frontend and backend.<br>
 The front-end is pretty simple. We will store a single html file "chat-bot-ui.html" in an <b>S3</b> bucket without public access.<br> 
 Then we will create a <b>Cloud-Front</b> distribution. Mention chat-bot-ui.html as the default root object. Mention the S3 bucket as the OAC, Origin Name, and Origin Domain, this should automatically create a bucket policy for our S3 bucket that grants the cloudfront the access to the bucket.<br>
@@ -48,7 +48,9 @@ Then we will create a <b>Cloud-Front</b> distribution. Mention chat-bot-ui.html 
 <img width="255" height="116" alt="image" src="https://github.com/user-attachments/assets/04491784-cb0d-45dc-afb6-f5992fc13115" /><br>
 <img width="613" height="321" alt="image" src="https://github.com/user-attachments/assets/ab116162-16f6-46d7-aaad-ef2ef05cd862" /><br>
 <img width="354" height="310" alt="image" src="https://github.com/user-attachments/assets/df5c3c74-350e-43ba-8225-708f4808f76c" /><br>
+<br>
 you should be able to see your website on this URL provided by the Cloudfront. Don't forget to put "https://" before it <br>
+<br>
 <img width="155" height="97" alt="image" src="https://github.com/user-attachments/assets/9b6ec222-2df7-427b-876e-54b3b2cf6b3d" /><br>
 
 
