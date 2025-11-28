@@ -15,26 +15,32 @@ If you are a backend engineer, these questions are important for you because: �
 I created a serverless AI chatbot that answers questions about Lord of the Rings using AWS! 
 Ask it anything about Middle-earth! 🧙‍♂️ But go easy on it as it is trained on just two pdf files, one containing the summary and another containing the characters. 
 
-Begin chat with one of these: hi, Hi, hey, Hey, hello, Hello 
-Ask questions like: 
-What is "abc"? or What was "abc"?
-Where is "xyz" or Where was "xyz"?
-Or simply mention the name of a place or a character and it should give you a reply. 
-
-### Here is the Architecture diagram:
-<img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
-
-AWS services used:
-🔹 Amazon Bedrock (Claude 3) - AI/ML foundation model 
-🔹 AWS Lambda - Serverless compute 
-🔹 API Gateway - REST API management 
-🔹 DynamoDB - Rate limiting & session management 
-🔹 S3 + CloudFront - Global content deliver
-🔹 Amazon Lex - for text conversational interfaces
-
-Key Features: 
-✅ Fully serverless architecture (auto-scales, pay-per-use) 
-✅ Multi-layer security (rate limiting, throttling, input validation) 
+Begin chat with one of these: hi, Hi, hey, Hey, hello, Hello <br> 
+Ask questions like: <br>
+What is "abc"? or What was "abc"? <br>
+Where is "xyz" or Where was "xyz"? <br>
+Or simply mention the name of a place or a character and it should give you a reply. <br>
 
 ![1761791315826](https://github.com/user-attachments/assets/bf0a2605-de38-4c3c-b3e6-9092596e9b4f)
+
+AWS services used:<br>
+🔹 Amazon Bedrock (Claude 3) - AI/ML foundation model <br>
+🔹 AWS Lambda - Serverless compute <br>
+🔹 API Gateway - REST API management <br>
+🔹 DynamoDB - Rate limiting & session management <br> 
+🔹 S3 + CloudFront - Global content deliver <br>
+🔹 Amazon Lex - for text conversational interfaces <br>
+
+
+### Let's understand the Architecture:
+<img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
+
+
+Key Features: <br> 
+✅ Fully serverless architecture (auto-scales, pay-per-use) <br> 
+✅ Multi-layer security (rate limiting, throttling, input validation) <br>
+
+
+
+
 
