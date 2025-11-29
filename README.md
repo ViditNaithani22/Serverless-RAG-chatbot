@@ -40,8 +40,6 @@ Key Features: <br>
 
 ### Let's understand the Architecture:
 <img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
-<br>
-<br>
 ### Architecture Summary:
 ### Front-end
 We store our HTML file in an <b>S3</b> bucket. Create <b>Cloudfront</b> distribution that has access to the S3 bucket. Cloudfront generates a link that users can send a GET request and view our chatbot website. 
@@ -61,7 +59,7 @@ All the questions sent by the user will be directed to this <b>Lambda function</
 The Lambda function does these three tasks for a new user: <br>
 1) Creates a <b>new user session ID</b>. Stores user session ID and userID received from the user as new record in the DynamoDB table. <br>
 2) Creates a new record in the DynamoDB table where for the <b>device IP</b> it tracks the number of requests received in the past one minute. <br>
-3) Sends the user query to the <b>LEX chatbot</b> with the user session ID and returns the LEX response back to the user. <br>
+3) Sends the user query to the <b>LEX chatbot</b> with the user session ID and returns the LEX response back to the user.
 #### API Gateway
 The fornt-end webpage has a form using which the user will send a POST request to this <b>API Gateway</b>. The POST request body has a userID and a message (user query). The API Gateway will redirect the request to the Lambda function.
 
