@@ -42,12 +42,35 @@ Key Features: <br>
 <img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
 <br>
 <br>
-As you can see in the diagram, our architecture is divided into two parts, frontend and backend.<br>
-The front-end is pretty simple. We will store a single html file "chat-bot-ui.html" in an <b>S3</b> bucket without public access.<br> 
+### Architecture Summary:
+### Front-end
+We store our HTML file in an <b>S3</b> bucket. Create <b>Cloudfront</b> distribution that has access to the S3 bucket. Cloudfront generates a link that users can send a GET request and view our chatbot website. 
+### Back-end
+#### S3
+We store our training data in the form of PDFs in an S3 bucket.
+#### Amazon Bedrock
+We create a <b>Knowledgebase</b> with <b>Amazon Bedrock</b> whose data source will be the S3 bucket. The Knowledgebase uses <b>Titan Text Embeddings V2 model</b> to generate vectors from our training data PDFs. These vectors are then stored in an <b>S3 Vector bucket</b> (the newest and cheapest option to store vectors). 
+#### Amazon Lex
+Then we create a new bot with <b>Amazon Lex</b>. We create two "intents". the first intent answers basic greetings from the user like "Hi" or "Hello". <br> 
+The second one answers questions from the training data. For this intent Amazon Lex sends the user query to the bedrock knowledge base, which has the capability to find the vectors from the training data that match the vectors from the user query. The knowledge base returns the vectors to Amazon LEX, and LEX uses <b>Claude 3 model</b> to use those vectors and create an answer redable to the user. 
+#### DynamoDB
+We create two tables. The first is to store <b>user session</b> for each user (For Lex to remember a user's previous chat, it needs a unique user session ID with every user query). <br>
+The second is to store the <b>number of requests sent by the user to the lambda function in one minute</b>. (This is to detect bots. If the number of requests sent by the user in one minute is more than <b>10</b>, then the lambda will not sent the user queries to LEX for the next 60 secs)
+#### Amazon Lambda
+All the questions sent by the user will be directed to this <b>Lambda function</b> to process. 
+The Lambda function does these three tasks for a new user: <br>
+1) Creates a <b>new user session ID</b>. Stores user session ID and userID received from the user as new record in the DynamoDB table. <br>
+2) Creates a new record in the DynamoDB table where for the <b>device IP</b> it tracks the number of requests received in the past one minute. <br>
+3) Sends the user query to the <b>LEX chatbot</b> with the user session ID and returns the LEX response back to the user. <br>
+#### API Gateway
+The fornt-end webpage has a form using which the user will send a POST request to this <b>API Gateway</b>. The POST request body has a userID and a message (user query). The API Gateway will redirect the request to the Lambda function.
+
+### Detailed instructions
+We will upload the HTML file "chat-bot-ui.html" in an <b>S3</b> bucket without public access. (you can find this file in the "Frontend" directory of this repository) <br> 
 <br>
 <img width="238" height="160" alt="image" src="https://github.com/user-attachments/assets/78e8f460-8446-4932-a276-95ed7b7fa2f7" />
 <br><br>
-Then we will create a <b>Cloud-Front</b> distribution. Mention chat-bot-ui.html as the default root object. Mention the S3 bucket as the OAC, Origin Name, and Origin Domain, this should automatically create a bucket policy for our S3 bucket that grants the cloudfront the access to the bucket.<br><br>
+Then we will create a <b>CloudFront</b> distribution. Mention chat-bot-ui.html as the default root object. Mention the S3 bucket as the OAC, Origin Name, and Origin Domain, this should automatically create a bucket policy for our S3 bucket that grants the cloudfront the access to the bucket.<br><br>
 
 <img width="255" height="116" alt="image" src="https://github.com/user-attachments/assets/04491784-cb0d-45dc-afb6-f5992fc13115" /><br>
 <img width="613" height="321" alt="image" src="https://github.com/user-attachments/assets/ab116162-16f6-46d7-aaad-ef2ef05cd862" /><br>
@@ -58,11 +81,14 @@ you should be able to see your website on this URL provided by the Cloudfront. D
 <img width="155" height="97" alt="image" src="https://github.com/user-attachments/assets/9b6ec222-2df7-427b-876e-54b3b2cf6b3d" /><br>
 <br><br>
 The first step for the backend is to create an <b>S3</b> bucket and upload your PDF files in it. These files contain the data you want your chatbot to learn and become expert in answering any questions from these files. 
-<br><br>
+<br>
 <img width="247" height="173" alt="image" src="https://github.com/user-attachments/assets/43615ef0-85df-4a79-95ed-f4586528661b" />
 <br><br>
-
-
+Next step is to create a knowledge-base with <b>Amazon Bedrock</b>. The knowledge-base stores the vectors and has the capability to return the vectors that matches the question.<br>
+We go to Amazon Bedrock, click on "Knowledge Bases", click on "Create" to create a new "Knowledgebase with vector store" for "Unstructured data" 
+<br><br>
+<img width="946" height="386" alt="bedrock4" src="https://github.com/user-attachments/assets/eae7931f-627e-4183-a199-c9fc6defc80f" />
+<br><br>
 
 
 
