@@ -40,6 +40,8 @@ Key Features: <br>
 
 ### Let's understand the Architecture:
 <img width="5963" height="2813" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/a976bb08-9dca-4271-8026-a2d4aa23b8d6" />
+
+
 ### Architecture Summary:
 
 ### Front-end
