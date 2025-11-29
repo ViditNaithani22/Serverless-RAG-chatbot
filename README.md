@@ -86,6 +86,10 @@ The front-end webpage has a form using which the user will send a POST request t
 The POST request body has a userID and a message (user query).  
 The API Gateway will redirect the request to the Lambda function.
 
+#### Security Layers
+Within the Lambda function, deployed the following logic: 1) Limit the number of user requests per minute, 2) user input validation (i.e. checking if user message is empty or not exceeding certain length).  
+Set route throttling with burst and rate limit in API Gateway. 
+
 
 ### Detailed instructions
 We will upload the HTML file "chat-bot-ui.html" in an <b>S3</b> bucket without public access. (you can find this file in the "Frontend" directory of this repository) <br> 
