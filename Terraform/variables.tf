@@ -13,10 +13,10 @@ variable "project_name" {
 variable "embedding_model_id" {
   type        = string
   description = "E.g., amazon.titan-embed-text-v2:0"
-  default     = "cohere.embed-english-v3"
+  default     = "amazon.titan-embed-text-v2:0"
 }
 
 variable "bedrock_model_id" {
   type    = string
-  default = "anthropic.claude-3-sonnet-20240229-v1:0"
+  default = "anthropic.claude-sonnet-4-20250514-v1:0"
 }
