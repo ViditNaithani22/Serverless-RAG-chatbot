@@ -8,7 +8,7 @@
 ## Commands
 
 #### 1. Initialize Terraform (first time or after adding new providers)
-###terraform init
+### terraform init
 
 #### 2. Format your Terraform files (optional but recommended)
 ### terraform fmt
