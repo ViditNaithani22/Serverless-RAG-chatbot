@@ -68,7 +68,8 @@ locals {
 resource "null_resource" "create_vector_index" {
   depends_on = [
     aws_opensearchserverless_collection.vectors,
-    aws_opensearchserverless_access_policy.data_access
+    aws_opensearchserverless_access_policy.data_access,
+    time_sleep.wait_for_data_access
   ]
 
   triggers = {
@@ -235,6 +236,10 @@ resource "aws_iam_role_policy" "bedrock_kb_model" {
   })
 }
 
+resource "time_sleep" "wait_for_data_access" {
+  depends_on      = [aws_opensearchserverless_access_policy.data_access]
+  create_duration = "4m"
+}
 
 resource "time_sleep" "wait_for_index" {
   depends_on      = [null_resource.create_vector_index]

@@ -47,6 +47,10 @@ resource "aws_apigatewayv2_integration" "lambda_integration" {
   payload_format_version = "2.0"
 
   description = "Lambda integration for chatbot"
+
+  depends_on = [
+    aws_lambda_function.chatbot
+  ]
 }
 
 # Create POST route
@@ -70,6 +74,11 @@ resource "aws_lambda_permission" "api_gateway" {
   function_name = aws_lambda_function.chatbot.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.chatbot_api.execution_arn}/*/*/chat"
+
+  depends_on = [
+    aws_lambda_function.chatbot,
+    aws_apigatewayv2_api.chatbot_api
+  ]
 }
 
 # ============================================

@@ -106,7 +106,10 @@ resource "aws_lambda_function" "chatbot" {
 
   depends_on = [
     aws_iam_role_policy.lambda_permissions,
-    aws_iam_role_policy_attachment.lambda_basic
+    aws_iam_role_policy_attachment.lambda_basic,
+    null_resource.build_bot_locale,
+    aws_dynamodb_table.chatbot_sessions,
+    aws_dynamodb_table.chatbot_rate_limits
   ]
 }
 
