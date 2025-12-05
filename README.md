@@ -113,7 +113,6 @@ The first step for the backend is to create an <b>S3</b> bucket and upload your 
 Next step is to create a knowledge-base with <b>Amazon Bedrock</b>. The knowledge-base stores the vectors and has the capability to return the vectors that matches the question.<br>
 We go to Amazon Bedrock, click on "Knowledge Bases", click on "Create" to create a new "Knowledgebase with vector store" for "Unstructured data" 
 <br><br>
-<img width="946" height="386" alt="bedrock4" src="https://github.com/user-attachments/assets/eae7931f-627e-4183-a199-c9fc6defc80f" />
 <br><br>
 
 
