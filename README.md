@@ -123,6 +123,10 @@ Select an embedding model like Titan Text Embeddings V2, and choose S3 Vectors t
 <br>
 <img width="371" height="292" alt="image" src="https://github.com/user-attachments/assets/d21ad40a-d83f-47ad-bffe-a2e61976413a" />
 <br><br>
+Go to your knowledgebase and select your data source, and then click on "Sync". Everytime you add a new PDF to your S3 bucket you click on sync, this recreates the vectors from the data source. 
+<br>
+<img width="849" height="334" alt="image" src="https://github.com/user-attachments/assets/f5666851-0b80-41ed-8788-4a06abedc44d" />
+<br><br>
 Next We will create LEX chatbot. Choose Traditional Blank Bot, give bot name, set IAM permissions and language of the bot.
 <br>
 <img width="418" height="271" alt="lex3" src="https://github.com/user-attachments/assets/1ed795ce-81a6-4a51-97bd-75a1526a4d5e" />
