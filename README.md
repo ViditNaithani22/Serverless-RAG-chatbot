@@ -241,7 +241,8 @@ Now got to "Stages" and select your newly created stage. Copy the link under "In
 <img width="648" height="278" alt="api20" src="https://github.com/user-attachments/assets/0d8ddadb-20d2-459e-91fd-07a51a3d176c" />
 <br>
 <img width="701" height="378" alt="api21" src="https://github.com/user-attachments/assets/05aade7c-33a2-47f0-a9b3-385c74abd3a0" />
-
+<br>
+After updating the chat-bot-ui.html file, reupload it to the backend S3 bucket. And test your chatbot out using your frontend. 
 
 
 
