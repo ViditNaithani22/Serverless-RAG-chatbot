@@ -176,6 +176,41 @@ Similarly we will create "ChatbotRateLimits" and name the partition key as ident
 <br>
 <img width="829" height="173" alt="image" src="https://github.com/user-attachments/assets/6ad5d2eb-42e8-4451-8a1e-b947ac2f609e" />
 <br><br>
+Now we will create the Lambda function which will carry the entire backend logic for our chatbot. The Lambda function code will be explained in detail in the "Backend" folder of this repository.<br>
+Create a new Lambda fucntion in your console. Copy the code in the "Backend/lambda-function.mjs" file and paste it in your lambda function. Replace the values of BOT_ID, BOT_ALIAS_ID, SESSIONS_TABLE, and  RATE_LIMIT_TABLE with the values that you have.<br>
+<img width="578" height="123" alt="image" src="https://github.com/user-attachments/assets/11fdcbef-16a9-4a18-94f5-529122362376" />
+<br>
+<img width="882" height="349" alt="image" src="https://github.com/user-attachments/assets/cb8b8292-71fb-4a29-bac3-f3056031889c" />
+<br><br>
+Now we will give our Lambda function the access to the DynamoDb tables and the LEX bot. For this go to "Configuration" and select "Permissions". Then click on the Lambda role under "Role name".<br> 
+<img width="919" height="172" alt="dynamodb8" src="https://github.com/user-attachments/assets/240d94e5-f28d-447f-9725-544e5a81577a" />
+<br><br>
+Click on "Add permissions" then select "Create inline policy". Then select "JSON".  
+<br>
+<img width="788" height="272" alt="image" src="https://github.com/user-attachments/assets/8f12416f-2ad1-47cd-9341-6cb8d25c387e" />
+<br>
+<img width="797" height="206" alt="image" src="https://github.com/user-attachments/assets/55420e45-ad08-43e5-9cdd-6f8dda36790a" />
+<br><br>
+Copy the json code in the "Backend/lambda-permission-lex-dynamodb.json" file and paste it here. And then save the policy.
+<br>
+<img width="791" height="315" alt="image" src="https://github.com/user-attachments/assets/ee79f68a-b80c-46fc-b185-007149f76e3a" />
+<br><br>
+Back in our Lambda function under "Configuration", select "General configuration" and increase the "Timeout" to 25 secs.
+<br>
+<img width="481" height="148" alt="image" src="https://github.com/user-attachments/assets/d39b3768-479e-48b3-b22b-ca2dce49148b" />
+<br><br>
+Now lets test the lambda function out. Go to "Test", give it a name, copy the json code from "Backend/lambda-test-case-1.json" file and paste it here. Click on "save" and then click on "test". You should see the following output.<br>
+<img width="813" height="293" alt="image" src="https://github.com/user-attachments/assets/30acecb3-1dd7-4da9-a7eb-a17652ce0f40" />
+<br>
+<img width="592" height="205" alt="image" src="https://github.com/user-attachments/assets/0fa0aedd-caac-4a0b-aab4-54d29d75419a" />
+<br><br>
+Similarly test the "Backend/lambda-test-case-2.json" as well.
+<br>
+<img width="767" height="205" alt="image" src="https://github.com/user-attachments/assets/cb079608-a9ab-4a4c-b6c4-edefd0adfab5" />
+<br><br>
+
+
+
 
 
 
