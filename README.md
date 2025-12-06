@@ -232,7 +232,7 @@ Now we go to "CORS" option and give the following CORS configuration.
 <br>
 <img width="793" height="342" alt="api15" src="https://github.com/user-attachments/assets/ae2845ef-40b0-42f9-a249-82dd0b33e370" />
 <br><br>
-Click on Deploy and create a new stage. Give it a name and enable automatic deployment
+Click on Deploy and create a new stage. Give it a name and enable automatic deployment <br>
 <img width="310" height="196" alt="api18" src="https://github.com/user-attachments/assets/feea513a-48bd-4c04-8210-a7a848728cd2" />
 <br>
 <img width="638" height="319" alt="api19" src="https://github.com/user-attachments/assets/06486100-4984-4527-a51a-d2e80626bd63" />
