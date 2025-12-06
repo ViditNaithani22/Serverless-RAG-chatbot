@@ -209,6 +209,41 @@ Similarly test the "Backend/lambda-test-case-2.json" as well.
 <img width="767" height="205" alt="image" src="https://github.com/user-attachments/assets/cb079608-a9ab-4a4c-b6c4-edefd0adfab5" />
 <br><br>
 
+Finally its time to create the API gateway, which will give us the link through which users can send POST request to the lambda function carrying their message and user ID.<br>
+For this project we will create HTTP API gateway.<br>
+<img width="930" height="217" alt="api3" src="https://github.com/user-attachments/assets/603c7409-56f3-4376-bbee-5baeb3a12b58" />
+<br><br>
+Give it a name and keep everything at default setting.
+<img width="848" height="333" alt="api5" src="https://github.com/user-attachments/assets/628b23d6-947a-46dd-8c1e-6b3cedadfab9" />
+<br><br>
+Create a "/" POST route. Then click on "POST" of your created route, then click on "Attatch integration", then click "Create and attatch an integration".
+<img width="809" height="190" alt="api7" src="https://github.com/user-attachments/assets/d76deb13-89ac-4648-bfe3-a13177acdada" />
+<img width="805" height="236" alt="api9" src="https://github.com/user-attachments/assets/e5157bda-2094-41c5-8754-63e562c6e136" />
+<img width="812" height="244" alt="api10" src="https://github.com/user-attachments/assets/b4df3a0c-e930-40f6-aafa-4e7e3b5ff5be" />
+<br><br>
+For "Integration type" select "Lambda Function". Search and select your lambda function and keep the timeout at 30000 secs.<br>
+<img width="673" height="191" alt="api11" src="https://github.com/user-attachments/assets/8ebc7a5f-6443-4f6e-ab4a-f193bb935a55" />
+<img width="601" height="259" alt="image" src="https://github.com/user-attachments/assets/46550e63-c5e1-4478-a15e-d16aa1febd83" />
+<br><br>
+Now we go to "CORS" option and give the following CORS configuration.
+<br>
+<img width="793" height="342" alt="api15" src="https://github.com/user-attachments/assets/ae2845ef-40b0-42f9-a249-82dd0b33e370" />
+<br><br>
+Click on Deploy and create a new stage. Give it a name and enable automatic deployment
+<img width="310" height="196" alt="api18" src="https://github.com/user-attachments/assets/feea513a-48bd-4c04-8210-a7a848728cd2" />
+<img width="638" height="319" alt="api19" src="https://github.com/user-attachments/assets/06486100-4984-4527-a51a-d2e80626bd63" />
+<br><br>
+Now got to "Stages" and select your newly created stage. Copy the link under "Invoke URL" and paste this link in your chat-bot-ui.html file. Under its <script> section paste it as the value for API_ENDPOINT variable. Do not forget to put '/' at the end of the url.  
+<img width="648" height="278" alt="api20" src="https://github.com/user-attachments/assets/0d8ddadb-20d2-459e-91fd-07a51a3d176c" />
+<br>
+<img width="701" height="378" alt="api21" src="https://github.com/user-attachments/assets/05aade7c-33a2-47f0-a9b3-385c74abd3a0" />
+
+
+
+
+
+
+
 
 
 
