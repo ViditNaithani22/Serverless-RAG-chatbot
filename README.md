@@ -164,11 +164,13 @@ Now we will create the two DynamoDb tables. "ChatbotSessions" and "ChatbotRateLi
 Let's create "ChatbotSessions". Name the partition key as userID, which will store the userID. The partition key makes each record unique and helps you get and update the record. 
 <br>
 <img width="603" height="317" alt="dynamodb3" src="https://github.com/user-attachments/assets/04bacaed-493e-4386-9cc9-b2605a566c29" />
-<br>
-<img width="957" height="263" alt="dynamodb4" src="https://github.com/user-attachments/assets/2f46dced-399d-4b50-973c-a8cbd760a5bc" />
 <br><br>
 Turn On the TTL option for this table
 <img width="910" height="302" alt="dynamodb6" src="https://github.com/user-attachments/assets/b898008b-45bb-4d72-abe4-9a537ba679fb" />
+<br><br>
+Similarly we will create "ChatbotRateLimits" and name the partition key as identifier which will store user's device IP.
+<br>
+<img width="829" height="173" alt="image" src="https://github.com/user-attachments/assets/6ad5d2eb-42e8-4451-8a1e-b947ac2f609e" />
 <br><br>
 
 
