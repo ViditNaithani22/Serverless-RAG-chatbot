@@ -168,7 +168,7 @@ Let's create "ChatbotSessions". Name the partition key as userID, which will sto
 Turn On the TTL option for this table
 <img width="910" height="302" alt="dynamodb6" src="https://github.com/user-attachments/assets/b898008b-45bb-4d72-abe4-9a537ba679fb" />
 <br><br>
-Similarly we will create "ChatbotRateLimits" and name the partition key as identifier which will store user's device IP.
+Similarly we will create "ChatbotRateLimits" and name the partition key as identifier which will store user's device IP. Also turn on the TTL option for this table as well.
 <br>
 <img width="829" height="173" alt="image" src="https://github.com/user-attachments/assets/6ad5d2eb-42e8-4451-8a1e-b947ac2f609e" />
 <br><br>
