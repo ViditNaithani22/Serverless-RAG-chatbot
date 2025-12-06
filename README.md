@@ -159,6 +159,18 @@ Click on "Build", this add the intents to the chatbot, and then click on "Test" 
 <img width="701" height="190" alt="lex21" src="https://github.com/user-attachments/assets/db0d3f8f-7d27-475e-ac2c-eb158296a79e" />
 <img width="196" height="296" alt="lex22" src="https://github.com/user-attachments/assets/48e26962-80a2-4282-a1ed-ed0b228a6645" />
 <br><br>
+Now we will create the two DynamoDb tables. "ChatbotSessions" and "ChatbotRateLimits". "ChatbotSessions" is used to record user session ID and user ID. Each record will be automatically deleted after 24 hours by turning on TTL (time to live). "ChatbotRateLimits" is used to record the device IP and the number of requests the decive has sent in the last one minute. here each record will last only one hour using TTL. 
+
+Let's create "ChatbotSessions". Name the partition key as userID, which will store the userID. The partition key makes each record unique and helps you get and update the record. 
+<br>
+<img width="603" height="317" alt="dynamodb3" src="https://github.com/user-attachments/assets/04bacaed-493e-4386-9cc9-b2605a566c29" />
+<br>
+<img width="957" height="263" alt="dynamodb4" src="https://github.com/user-attachments/assets/2f46dced-399d-4b50-973c-a8cbd760a5bc" />
+<br><br>
+Turn On the TTL option for this table
+<img width="910" height="302" alt="dynamodb6" src="https://github.com/user-attachments/assets/b898008b-45bb-4d72-abe4-9a537ba679fb" />
+<br><br>
+
 
 
 
