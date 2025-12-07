@@ -228,6 +228,9 @@ For "Integration type" select "Lambda Function". Search and select your lambda f
 <br>
 <img width="601" height="259" alt="image" src="https://github.com/user-attachments/assets/46550e63-c5e1-4478-a15e-d16aa1febd83" />
 <br><br>
+Go to "Throttling" option. Set the "burst limit" to 20 (Can handle upto 20 requests if all came at the same time stamp) and set the "rate limit" to 10 (Normally can handle 10 requests in one second).<br>
+<img width="950" height="326" alt="image" src="https://github.com/user-attachments/assets/ee254222-9205-4b81-bbbb-c9dbe740b969" />
+<br><br>
 Now we go to "CORS" option and give the following CORS configuration.
 <br>
 <img width="793" height="342" alt="api15" src="https://github.com/user-attachments/assets/ae2845ef-40b0-42f9-a249-82dd0b33e370" />
